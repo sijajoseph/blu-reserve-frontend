@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blu Reserve - Seat Booking System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <h1>🪑 Blu Reserve</h1>
+                <p class="tagline">Smart Seat Booking System</p>
+            </div>
+            
+            <!-- Employee Login Simulation -->
+            <div class="user-section">
+                <label for="employeeSelect">Select Employee:</label>
+                <select id="employeeSelect" class="employee-dropdown">
+                    <option value="">-- Choose Employee --</option>
+                    <option value="EMP101" data-manager="MGR001">John Doe (EMP101)</option>
+                    <option value="EMP102" data-manager="MGR001">Jane Smith (EMP102)</option>
+                    <option value="EMP103" data-manager="MGR002">Mike Johnson (EMP103)</option>
+                    <option value="EMP104" data-manager="MGR002">Sarah Williams (EMP104)</option>
+                    <option value="EMP105" data-manager="MGR003">David Brown (EMP105)</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Manager Token Display -->
+        <div class="token-display" id="tokenDisplay" style="display: none;">
+            <div class="token-card">
+                <span class="token-label">Manager:</span>
+                <span id="managerName" class="token-value">--</span>
+            </div>
+            <div class="token-card">
+                <span class="token-label">Available Tokens:</span>
+                <span id="tokenCount" class="token-value">--</span>
+            </div>
+        </div>
+
+        <!-- Alert/Notification Area -->
+        <div id="notification" class="notification"></div>
+
+        <!-- Seat Legend -->
+        <div class="legend">
+            <h3>Seat Status Guide</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <span class="seat-demo available"></span>
+                    <span>Available</span>
+                </div>
+                <div class="legend-item">
+                    <span class="seat-demo booked"></span>
+                    <span>Booked</span>
+                </div>
+                <div class="legend-item">
+                    <span class="seat-demo selected"></span>
+                    <span>Selected</span>
+                </div>
+                <div class="legend-item">
+                    <span class="seat-demo my-booking"></span>
+                    <span>Your Booking</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seating Arrangement Grid -->
+        <div class="seating-section">
+            <h2>Select Your Seat</h2>
+            
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading seats...</p>
+            </div>
+
+            <!-- Seat Grid Container -->
+            <div id="seatGrid" class="seat-grid">
+                <!-- Seats will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button id="resetBtn" class="btn btn-secondary" disabled>
+                🔄 Reset Selection
+            </button>
+            <button id="confirmBtn" class="btn btn-primary" disabled>
+                ✅ Confirm Booking
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Blu Reserve. All rights reserved.</p>
+            <p class="footer-note">Note: Backend integration ready - Configure API endpoints in script.js</p>
+        </footer>
+
+    </div>
+
+    <!-- Tooltip for hover (hidden by default) -->
+    <div id="seatTooltip" class="tooltip" style="display: none;"></div>
+
+    <!-- Include JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
